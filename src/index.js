@@ -26,8 +26,6 @@ const initialState = {
   theme : window.localStorage.getItem('turnstoneTheme') || 'dark'
 };
 
-
-
 const AppContext = createContext([{},() => {}]);
 
 const AppProvider = props => {
@@ -66,8 +64,6 @@ const useThemeToggle = () => {
   }
 };
 
-
-
 const ThemeToggle = () => {
   const [state] = useContext(AppContext);
   const { toggleTheme } = useThemeToggle();
@@ -78,7 +74,6 @@ const ThemeToggle = () => {
     </div>
   )
 }
-
 
 const App = () => {
   return (
@@ -118,7 +113,5 @@ const App = () => {
     </Router>
   );
 }
-
-
 
 render(<App />, document.querySelector('#root'));

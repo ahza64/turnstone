@@ -1,20 +1,44 @@
 import React from 'react';
+import { useState } from 'react';
+import HamburgerMenu from 'react-hamburger-menu';
+import { slide as Menu } from 'react-burger-menu'
 import { useHistory } from "react-router-dom";
 
-const NavBar = () => {
+
+const NavButtonList = () => {
   return (
-    <nav>
-        <HomeButton/>
-        <AboutButton/>
-        <ContactButton/>
-        <ProfessionalButton/>
-        <InterestsButton/>
-        <SocialButton/>
-        <TruthButton/>
-        <DreamsButton/>
-    </nav>
+    <>
+      <div><HomeButton/></div>
+      <div><AboutButton/></div>
+      <div><ContactButton/></div>
+      <div><ProfessionalButton/></div>
+      <div><InterestsButton/></div>
+      <div><SocialButton/></div>
+      <div><TruthButton/></div>
+      <div><DreamsButton/></div>
+    </>
   )
 }
+
+const NavBar = () => {
+  const [ hamburgerOpen, setHamburgerOpen ] = useState(false);
+  const handleHamburgerMenuClicked = () => {
+    console.log("hello", hamburgerOpen);
+    setHamburgerOpen(true);
+
+  }
+  return (
+    <>
+      <Menu className="hamburger" isOpen={false} menuClicked={handleHamburgerMenuClicked} >
+        <NavButtonList/>
+      </Menu>
+      <nav className="navbar-wrapper">
+        <NavButtonList />
+      </nav>
+    </>
+  )
+}
+
 
 const HomeButton = () => {
   const history = useHistory();
@@ -22,9 +46,7 @@ const HomeButton = () => {
     history.push("/");
   }
   return (
-    <div>
       <button type="button" onClick={handleHome}>Home</button>
-    </div>
   )
 }
 
@@ -34,9 +56,7 @@ const AboutButton = () => {
     history.push("/about");
   }
   return (
-    <div>
       <button type="button" onClick={handleAbout}>About</button>
-    </div>
   )
 }
 
@@ -46,9 +66,7 @@ const ContactButton = () => {
     history.push("/contact");
   }
   return (
-    <div>
       <button type="button" onClick={handleContact}>Contact</button>
-    </div>
   )
 }
 
@@ -58,9 +76,7 @@ const ProfessionalButton = () => {
     history.push("/professional");
   }
   return (
-    <div>
       <button type="button" onClick={handleProfessional}>Professional</button>
-    </div>
   )
 }
 
@@ -70,9 +86,7 @@ const InterestsButton = () => {
     history.push("/interests");
   }
   return (
-    <div>
       <button type="button" onClick={handleInterests}>Interests</button>
-    </div>
   )
 }
 
@@ -82,9 +96,7 @@ const SocialButton = () => {
     history.push("/social");
   }
   return (
-    <div>
       <button type="button" onClick={handleSocial}>Social</button>
-    </div>
   )
 }
 
@@ -94,9 +106,7 @@ const TruthButton = () => {
     history.push("/truth");
   }
   return (
-    <div>
       <button type="button" onClick={handleTruth}>Truth</button>
-    </div>
   )
 }
 
@@ -106,9 +116,7 @@ const DreamsButton = () => {
     history.push("/dreams");
   }
   return (
-    <div>
       <button type="button" onClick={handleDreams}>Dreams</button>
-    </div>
   )
 }
 
