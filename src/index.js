@@ -75,11 +75,82 @@ const ThemeToggle = () => {
   )
 }
 
+const RadioThemeToggle = () => {
+
+
+  const [platformValue, plaftormInputProps] = useRadioButtons("platform");
+  const [genderValue, genderInputProps] = useRadioButtons("gender");
+  return (
+    <div>
+      <form>
+        <fieldset>
+          Windows
+          <input
+            value="windows"
+            checked={platformValue === "windows"}
+            {...plaftormInputProps}
+          />
+          Mac
+          <input
+            value="mac"
+            checked={platformValue === "mac"}
+            {...plaftormInputProps}
+          />
+          Linux
+          <input
+            value="linux"
+            checked={platformValue === "linux"}
+            {...plaftormInputProps}
+          />
+        </fieldset>
+        <fieldset>
+          Dark
+          <input
+            value="dark"
+            checked={genderValue === "dark"}
+            {...genderInputProps}
+          />
+          Light
+          <input
+            value="light"
+            checked={genderValue === "light"}
+            {...genderInputProps}
+          />
+        </fieldset>
+      </form>
+    </div>
+  );
+}
+
+const useRadioButtons = (name) => {
+  const { toggleTheme } = useThemeToggle();
+  const [state] = useContext(AppContext);
+  const [value, setState] = useState(null);
+
+  const handleChange = e => {
+    setState(e.target.value);
+    toggleTheme(state.theme);
+  };
+
+  const inputProps = {
+    name,
+    type: "radio",
+    onChange: handleChange
+  };
+
+  return [value, inputProps];
+}
+
+const RadioButton = () => {
+
+}
+
 const App = () => {
   return (
     <Router>
     <AppProvider>
     <NavBar/>
+    <RadioThemeToggle/>
     <ThemeToggle/>
         <div>
           <Switch>
