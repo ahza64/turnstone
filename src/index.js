@@ -1,23 +1,9 @@
-import React from 'react';
-import {render} from 'react-dom';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useHistory
-} from "react-router-dom";
-import { useEffect, useState, useContext, createContext } from 'react';
+import React, { useEffect, useState, useContext, createContext } from 'react';
+import { render } from 'react-dom';
+import { BrowserRouter as Router } from "react-router-dom";
 
-import HomePage from './homePage';
-import ContactMePage from './contactMePage';
-import AboutMePage from './aboutMePage';
-import DreamsPage from './dreamsPage';
-import InterestsPage from './InterestsPage';
-import ProfessionalPage from './professionalPage';
-import SocialPage from './socialPage';
-import TruthPage from './truthPage';
 import NavBar from './navBar';
+import IndexPages from './pages/index.js';
 
 import './App.css';
 
@@ -148,39 +134,12 @@ const RadioButton = () => {
 const App = () => {
   return (
     <Router>
-    <AppProvider>
-    <NavBar/>
-    <RadioThemeToggle/>
-    <ThemeToggle/>
-        <div>
-          <Switch>
-            <Route path="/professional">
-              <ProfessionalPage />
-            </Route>
-            <Route path="/interests">
-              <InterestsPage />
-            </Route>
-            <Route path="/about">
-              <AboutMePage />
-            </Route>
-            <Route path="/contact">
-              <ContactMePage />
-            </Route>
-            <Route path="/social">
-              <SocialPage />
-            </Route>
-            <Route path="/dreams">
-              <DreamsPage />
-            </Route>
-            <Route path="/truth">
-              <TruthPage />
-            </Route>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-          </Switch>
-        </div>
-    </AppProvider>
+      <AppProvider>
+        <NavBar/>
+        <RadioThemeToggle/>
+        <ThemeToggle/>
+        <IndexPages/>
+      </AppProvider>
     </Router>
   );
 }
