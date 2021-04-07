@@ -9,25 +9,26 @@ import IndexPages from './pages/index.js';
 import './App.css';
 
 // const history = useHistory();
+
+const AppContext = createContext([{},() => {}]);
 const initialState = {
   theme : window.localStorage.getItem('turnstoneTheme') || 'dark'
 };
 
-const AppContext = createContext([{},() => {}]);
-
 const AppProvider = props => {
   // state is the object (getter), setState is (function) setter
   const [state, setState] = useState({ ...initialState });
+  console.log(state);
 
-  useEffect(() => {
-    const map = { dark : 'light', light : 'dark' };
-    if (document.body.classList.length === 0) {
-      document.body.classList.add(state.theme);
-    } else {
-      document.body.classList.remove(map[state.theme]);
-      document.body.classList.add(state.theme);
-    }
-  },[state.theme]);
+  // useEffect(() => {
+  //   const map = { dark : 'light', light : 'dark' };
+  //   if (document.body.classList.length === 0) {
+  //     document.body.classList.add(state.theme);
+  //   } else {
+  //     document.body.classList.remove(map[state.theme]);
+  //     document.body.classList.add(state.theme);
+  //   }
+  // },[state.theme]);
 
   return (
     <AppContext.Provider value={[state, setState]}>
@@ -79,15 +80,23 @@ const RadioThemeToggle = () => {
   );
 }
 
+const Wrapper = () => {
+  const [state] = React.useContext(AppContext);
+
+  return (
+    <Provider theme={defaultTheme} colorScheme="dark">
+      <NavBar/>
+      <RadioThemeToggle/>
+      <IndexPages/>
+    </Provider>
+  )
+}
+
 const App = () => {
   return (
       <Router>
         <AppProvider>
-          <Provider theme={defaultTheme} colorScheme="dark">
-            <NavBar/>
-            <RadioThemeToggle/>
-            <IndexPages/>
-          </Provider>
+          <Wrapper/>
         </AppProvider>
       </Router>
   );
