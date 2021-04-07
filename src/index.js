@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext, createContext } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom";
+import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
 
 import NavBar from './navBar';
 import IndexPages from './pages/index.js';
@@ -50,57 +51,27 @@ const useThemeToggle = () => {
   }
 };
 
-const ThemeToggle = () => {
+const RadioThemeToggle = () => {
   const [state] = useContext(AppContext);
   const { toggleTheme } = useThemeToggle();
 
   return (
-    <div>
-      <button onClick={() => toggleTheme(state.theme)}>{state.theme}</button>
-    </div>
-  )
-}
-
-const RadioThemeToggle = () => {
-
-
-  const [platformValue, plaftormInputProps] = useRadioButtons("platform");
-  const [genderValue, genderInputProps] = useRadioButtons("gender");
-  return (
-    <div>
+    <div className="radio-button">
       <form>
-        <fieldset>
-          Windows
-          <input
-            value="windows"
-            checked={platformValue === "windows"}
-            {...plaftormInputProps}
-          />
-          Mac
-          <input
-            value="mac"
-            checked={platformValue === "mac"}
-            {...plaftormInputProps}
-          />
-          Linux
-          <input
-            value="linux"
-            checked={platformValue === "linux"}
-            {...plaftormInputProps}
-          />
-        </fieldset>
         <fieldset>
           Dark
           <input
             value="dark"
-            checked={genderValue === "dark"}
-            {...genderInputProps}
+            checked={state.theme === "dark"}
+            type="radio"
+            onChange={() => toggleTheme(state.theme)}
           />
           Light
           <input
             value="light"
-            checked={genderValue === "light"}
-            {...genderInputProps}
+            checked={state.theme === "light"}
+            type="radio"
+            onChange={() => toggleTheme(state.theme)}
           />
         </fieldset>
       </form>
@@ -108,39 +79,17 @@ const RadioThemeToggle = () => {
   );
 }
 
-const useRadioButtons = (name) => {
-  const { toggleTheme } = useThemeToggle();
-  const [state] = useContext(AppContext);
-  const [value, setState] = useState(null);
-
-  const handleChange = e => {
-    setState(e.target.value);
-    toggleTheme(state.theme);
-  };
-
-  const inputProps = {
-    name,
-    type: "radio",
-    onChange: handleChange
-  };
-
-  return [value, inputProps];
-}
-
-const RadioButton = () => {
-
-}
-
 const App = () => {
   return (
-    <Router>
-      <AppProvider>
-        <NavBar/>
-        <RadioThemeToggle/>
-        <ThemeToggle/>
-        <IndexPages/>
-      </AppProvider>
-    </Router>
+      <Router>
+        <AppProvider>
+          <Provider theme={defaultTheme} colorScheme="dark">
+            <NavBar/>
+            <RadioThemeToggle/>
+            <IndexPages/>
+          </Provider>
+        </AppProvider>
+      </Router>
   );
 }
 

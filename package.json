@@ -45,6 +45,7 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "@adobe/react-spectrum": "^3.9.0",
     "react-burger-menu": "^3.0.6",
     "react-hamburger-menu": "^1.2.1"
   }
