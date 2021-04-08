@@ -11,8 +11,13 @@ import './App.css';
 // const history = useHistory();
 
 const AppContext = createContext([{},() => {}]);
+let turnstoneTheme = window.localStorage.getItem('turnstoneTheme');
+if (turnstoneTheme !== "light" || "dark") {
+  window.localStorage.setItem('turnstoneTheme', "dark");
+  turnstoneTheme = "dark";
+}
 const initialState = {
-  theme : window.localStorage.getItem('turnstoneTheme') || 'dark'
+  theme : turnstoneTheme
 };
 
 const AppProvider = props => {
@@ -84,7 +89,7 @@ const Wrapper = () => {
   const [state] = React.useContext(AppContext);
 
   return (
-    <Provider theme={defaultTheme} colorScheme="dark">
+    <Provider theme={defaultTheme} colorScheme={state.theme}>
       <NavBar/>
       <RadioThemeToggle/>
       <IndexPages/>
