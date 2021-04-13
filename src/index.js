@@ -1,29 +1,26 @@
 import React, { useEffect, useState, useContext, createContext } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom";
-import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
+import {Provider, defaultTheme, Button, Switch} from '@adobe/react-spectrum';
 
 import NavBar from './navBar';
 import IndexPages from './pages/index.js';
 
 import './App.css';
 
-// const history = useHistory();
-
 const AppContext = createContext([{},() => {}]);
-let turnstoneTheme = window.localStorage.getItem('turnstoneTheme');
-if (turnstoneTheme !== "light" || "dark") {
-  window.localStorage.setItem('turnstoneTheme', "dark");
-  turnstoneTheme = "dark";
-}
-const initialState = {
-  theme : turnstoneTheme
-};
 
 const AppProvider = props => {
+  let turnstoneTheme = window.localStorage.getItem('turnstoneTheme');
+  if (turnstoneTheme !== "light" || "dark") {
+    window.localStorage.setItem('turnstoneTheme', "dark");
+    turnstoneTheme = "dark";
+  }
+  const initialState = {
+    theme : turnstoneTheme
+  };
   // state is the object (getter), setState is (function) setter
   const [state, setState] = useState({ ...initialState });
-  console.log(state);
 
   // useEffect(() => {
   //   const map = { dark : 'light', light : 'dark' };
@@ -85,25 +82,41 @@ const RadioThemeToggle = () => {
   );
 }
 
-const Wrapper = () => {
-  const [state] = React.useContext(AppContext);
+const ThemeToggle = () => {
+  // let [selected, setSelection] = React.useState(false);
+  const [state] = useContext(AppContext);
+  const { toggleTheme } = useThemeToggle();
 
+  return (
+    <Switch value={state.theme} isSelected={state.theme === "light"} onChange={() => toggleTheme(state.theme)}>
+      Activate Lightmode
+    </Switch>
+  )
+}
+
+const StylingWrapper = () => {
+  const [state] = React.useContext(AppContext);
+  // bring in adobe spectrum "Provider"
   return (
     <Provider theme={defaultTheme} colorScheme={state.theme}>
       <NavBar/>
+      <ThemeToggle/>
       <RadioThemeToggle/>
       <IndexPages/>
     </Provider>
   )
 }
 
+// export default StylingWrapper;
+
 const App = () => {
+  // bring in custom hook for global state as "AppProvider" and react-router "Router"
   return (
+    <AppProvider>
       <Router>
-        <AppProvider>
-          <Wrapper/>
-        </AppProvider>
+          <StylingWrapper/>
       </Router>
+    </AppProvider>
   );
 }
 
