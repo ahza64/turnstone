@@ -23,9 +23,7 @@ const NavButtonList = () => {
 const NavBar = () => {
   const [ hamburgerOpen, setHamburgerOpen ] = useState(false);
   const handleHamburgerMenuClicked = () => {
-    console.log("hello", hamburgerOpen);
     setHamburgerOpen(true);
-
   }
   return (
     <>

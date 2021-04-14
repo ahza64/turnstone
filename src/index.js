@@ -83,7 +83,6 @@ const RadioThemeToggle = () => {
 }
 
 const ThemeToggle = () => {
-  // let [selected, setSelection] = React.useState(false);
   const [state] = useContext(AppContext);
   const { toggleTheme } = useThemeToggle();
 
@@ -100,8 +99,8 @@ const StylingWrapper = () => {
   return (
     <Provider theme={defaultTheme} colorScheme={state.theme}>
       <NavBar/>
-      <ThemeToggle/>
       <RadioThemeToggle/>
+      <ThemeToggle/>
       <IndexPages/>
     </Provider>
   )
@@ -114,7 +113,7 @@ const App = () => {
   return (
     <AppProvider>
       <Router>
-          <StylingWrapper/>
+        <StylingWrapper/>
       </Router>
     </AppProvider>
   );
