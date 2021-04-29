@@ -12,10 +12,10 @@ return (
     But to feed myself, I aspire to to more data visualisations and aggreagations for tangible items and logistical resources.
     I grew up outside a lot, similar to a boyscout, but never joined the scouts for religious resons.
     A real adventurer and harlot. </p>
-    <div class="container">
-      <div class="box">
+    <div className="container">
+      <div className="box">
         <span></span>
-        <div class="content">
+        <div className="content">
         This is so metal!
         </div>
       </div>

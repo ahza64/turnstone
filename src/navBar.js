@@ -1,21 +1,30 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import HamburgerMenu from 'react-hamburger-menu';
 import { slide as Menu } from 'react-burger-menu'
 import { useHistory } from "react-router-dom";
+import {Switch} from '@adobe/react-spectrum';
 
+import useThemeToggle from './hooks/useThemeToggle';
+import {AppContext} from "./context/context";
+
+const ThemeToggle = () => {
+  const [state] = useContext(AppContext);
+  const { toggleTheme } = useThemeToggle();
+  return (
+    <Switch value={state.theme} isSelected={state.theme === "light"} onChange={() => toggleTheme(state.theme)}>
+      Activate Lightmode
+    </Switch>
+  )
+}
 
 const NavButtonList = () => {
+
   return (
     <>
       <div><HomeButton/></div>
       <div><AboutButton/></div>
       <div><ContactButton/></div>
-      <div><ProfessionalButton/></div>
-      <div><InterestsButton/></div>
-      <div><SocialButton/></div>
-      <div><TruthButton/></div>
-      <div><DreamsButton/></div>
     </>
   )
 }
@@ -31,6 +40,7 @@ const NavBar = () => {
         <NavButtonList/>
       </Menu>
       <nav className="navbar-wrapper">
+        <ThemeToggle />
         <NavButtonList />
       </nav>
     </>

@@ -47,6 +47,7 @@
   "dependencies": {
     "@adobe/react-spectrum": "^3.9.0",
     "react-burger-menu": "^3.0.6",
-    "react-hamburger-menu": "^1.2.1"
+    "react-hamburger-menu": "^1.2.1",
+    "styled-components": "^5.2.3"
   }
 }

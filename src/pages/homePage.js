@@ -1,8 +1,10 @@
 import React from 'react';
+import samuri from './samuri.png'
 
 const HomePage = () => {
 return (
   <div>
+    <img src={samuri} />
     <h2>Home Page</h2>
     <p>moving-throbbing symbol badass white mono cyberpunk symbol or boat gif, with link(s) to showcase project,if available</p>
     <p>spinning flying icons that flip on hover were were really really badass</p>
