@@ -13,19 +13,8 @@ const ThemeToggle = () => {
   const { toggleTheme } = useThemeToggle();
   return (
     <Switch value={state.theme} isSelected={state.theme === "light"} onChange={() => toggleTheme(state.theme)}>
-      Activate Lightmode
+      switch from {state.theme}mode
     </Switch>
-  )
-}
-
-const NavButtonList = () => {
-
-  return (
-    <>
-      <div><HomeButton/></div>
-      <div><AboutButton/></div>
-      <div><ContactButton/></div>
-    </>
   )
 }
 
@@ -47,6 +36,15 @@ const NavBar = () => {
   )
 }
 
+const NavButtonList = () => {
+  return (
+    <>
+    <div><HomeButton/></div>
+    <div><AboutButton/></div>
+    <div><ContactButton/></div>
+    </>
+  )
+}
 
 const HomeButton = () => {
   const history = useHistory();

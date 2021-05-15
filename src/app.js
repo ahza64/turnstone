@@ -1,15 +1,19 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import React, { useContext } from 'react';
+import {Provider, defaultTheme} from '@adobe/react-spectrum';
+import {AppContext} from "./context/context";
 
-// import StylingWrapper  from "./index.js";
+import NavBar from './navBar';
+import IndexPages from './pages/index.js';
 
-const App = () => {
+const StylingWrapper = () => {
+  const [state] = React.useContext(AppContext);
+  // bring in adobe spectrum "Provider"
   return (
-      <Router>
-        <AppProvider>
-          <StylingWrapper/>
-        </AppProvider>
-      </Router>
-  );
+    <Provider theme={defaultTheme} colorScheme={state.theme}>
+      <NavBar/>
+      <IndexPages/>
+    </Provider>
+  )
 }
 
-// render(<App />, document.querySelector('#root'));
+export default StylingWrapper;
