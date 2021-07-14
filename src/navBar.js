@@ -40,6 +40,7 @@ const NavButtonList = () => {
   return (
     <>
     <div><HomeButton/></div>
+    <div><ProfessionalButton/></div>
     <div><AboutButton/></div>
     <div><ContactButton/></div>
     </>
