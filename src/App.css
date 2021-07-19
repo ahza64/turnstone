@@ -28,6 +28,9 @@ button {
 
 #main {
   width: 100%;
+  background: radial-gradient(
+    circle, #ffbc00 0%, transparent 31%
+    );
 }
 
 #main-img {
