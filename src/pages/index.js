@@ -5,7 +5,7 @@ import HomePage from './homePage';
 import ContactMePage from './contactMePage';
 import AboutMePage from './aboutMePage';
 import DreamsPage from './dreamsPage';
-import InterestsPage from './InterestsPage';
+import InterestsPage from './interestsPage';
 import ProfessionalPage from './professionalPage';
 import SocialPage from './socialPage';
 import TruthPage from './truthPage';
