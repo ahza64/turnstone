@@ -51,6 +51,7 @@ const HomeButton = () => {
   const history = useHistory();
   const handleHome = () => {
     history.push("/");
+    window.scrollTo(0, 0);
   }
   return (
       <button type="button" onClick={handleHome}>Home</button>
@@ -61,6 +62,7 @@ const AboutButton = () => {
   const history = useHistory();
   const handleAbout = () => {
     history.push("/about");
+    window.scrollTo(0, 0);
   }
   return (
       <button type="button" onClick={handleAbout}>About</button>
@@ -71,6 +73,7 @@ const ContactButton = () => {
   const history = useHistory();
   const handleContact = () => {
     history.push("/contact");
+    window.scrollTo(0, 0);
   }
   return (
       <button type="button" onClick={handleContact}>Contact</button>
@@ -81,6 +84,7 @@ const ProfessionalButton = () => {
   const history = useHistory();
   const handleProfessional = () => {
     history.push("/professional");
+    window.scrollTo(0, 0);
   }
   return (
       <button type="button" onClick={handleProfessional}>Professional</button>
