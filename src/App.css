@@ -49,7 +49,7 @@ button {
 }
 
 #slot1img {
-  height: 8em;
+  height: 7em;
   float: right;
 }
 
@@ -116,7 +116,7 @@ button {
   z-index: 10;
   padding: 0px 20px 0px 20px;
   max-height: 100px;
-  overflow: auto;
+
 }
 
 #slot2 {
@@ -125,7 +125,7 @@ button {
 }
 
 #slot2img {
-  height: 8em;
+  height: 7em;
   float: left;
 }
 
@@ -191,7 +191,7 @@ button {
   z-index: 10;
   padding: 0px 20px 0px 20px;
   max-height: 100px;
-  overflow: auto;
+
 }
 
 #slot3 {

@@ -10,8 +10,10 @@ const StylingWrapper = () => {
   // bring in adobe spectrum "Provider"
   return (
     <Provider theme={defaultTheme} colorScheme={state.theme}>
-      <NavBar/>
-      <IndexPages/>
+      <div className='parentGrid'>
+        <NavBar/>
+        <IndexPages/>
+      </div>
     </Provider>
   )
 }

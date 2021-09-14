@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import AppProvider from "./context/context";
 import StylingWrapper from './app';
 
+import './grid.css';
 import './App.css';
 
 // export default StylingWrapper;

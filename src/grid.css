@@ -1,0 +1,14 @@
+.parentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.homeGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.pageGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+}

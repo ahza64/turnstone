@@ -3,7 +3,7 @@ import oldJustin from './oldJustin.jpg';
 
 const ProfessionalPage = () => {
 return (
-  <div className="page">
+  <div className="pageGrid">
   <h2>Professional</h2>
   <img className="secondary-image" src={oldJustin} />
   Full stack web developer, consistently finding himself falling into leadership roles through building productive and motivated social workflows utilizing compassion, understanding and empathy to find compromise within a team when needed.
