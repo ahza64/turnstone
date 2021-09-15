@@ -2,9 +2,14 @@ import React, { useEffect, useState, useContext, createContext } from 'react';
 
 const AppContext = createContext([{},() => {}]);
 
+const InitialState = () => {
+
+}
+
 const AppProvider = props => {
+  // console.log("window local storage", window.localStorage.getItem('turnstoneTheme'));
   let turnstoneTheme = window.localStorage.getItem('turnstoneTheme');
-  if (turnstoneTheme !== "light" || "dark") {
+  if (!window.localStorage.getItem('turnstoneTheme')) {
     window.localStorage.setItem('turnstoneTheme', "dark");
     turnstoneTheme = "dark";
   }
@@ -23,6 +28,7 @@ const AppProvider = props => {
   //     document.body.classList.add(state.theme);
   //   }
   // },[state.theme]);
+  InitialState();
 
   return (
     <AppContext.Provider value={[state, setState]}>
