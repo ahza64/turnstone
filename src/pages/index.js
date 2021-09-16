@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 
-import HomePage from './homePage';
-import ContactMePage from './contactMePage';
-import AboutMePage from './aboutMePage';
+import HomePage from './home/homePage';
+import ContactMePage from './contactMe/contactMePage';
+import AboutMePage from './aboutMe/aboutMePage';
 import DreamsPage from './dreamsPage';
 import InterestsPage from './interestsPage';
-import ProfessionalPage from './professionalPage';
+import ProfessionalPage from './professional/professionalPage';
 import SocialPage from './socialPage';
 import TruthPage from './truthPage';
 

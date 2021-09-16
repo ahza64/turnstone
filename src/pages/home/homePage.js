@@ -1,8 +1,8 @@
 import React from 'react';
 import samuri from './samuri.png';
-import youngJustin from './youngJustin.jpg';
-import oldJustin from './oldJustin.jpg';
-import linkedinLogo from './Linkedin-Logo.png';
+import youngJustin from '../aboutMe/youngJustin.jpg';
+import oldJustin from '../professional/oldJustin.jpg';
+import linkedinLogo from '../contactMe/Linkedin-Logo.png';
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
