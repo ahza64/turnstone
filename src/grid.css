@@ -11,5 +11,4 @@
 .pageGrid {
   display: grid;
   min-height: 95vh;
-  grid-template-columns: 1fr 1fr;
 }

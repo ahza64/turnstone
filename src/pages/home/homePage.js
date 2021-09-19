@@ -16,9 +16,9 @@ const ProfessionalLink = () => {
       <Link to="/professional" style={{color: "white", textDecoration: "none"}}>
         <span></span>
         <div id="slot1" className="content1">
-          <h1>
-            Software Engineering Career
-          </h1>
+          <h2>
+            Software Engineering Story
+          </h2>
           <img id="slot1img" src={oldJustin} alt="slot1 image"/>
         </div>
       </Link>
@@ -36,9 +36,9 @@ const AboutLink = () => {
         <span></span>
         <div id="slot2" className="content2">
           <img id="slot2img" src={youngJustin} alt="slot2 image"/>
-          <h1>
+          <h2>
             Personal Story
-          </h1>
+          </h2>
         </div>
       </Link>
   )
