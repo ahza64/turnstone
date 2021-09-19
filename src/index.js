@@ -5,6 +5,10 @@ import AppProvider from "./context/context";
 import StylingWrapper from './app';
 
 import './grid.css';
+import './pages/aboutMe/aboutMe.css';
+import './pages/contactMe/contactMe.css';
+import './pages/home/home.css';
+import './pages/professional/professional.css';
 import './App.css';
 
 // export default StylingWrapper;

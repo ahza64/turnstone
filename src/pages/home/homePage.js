@@ -7,47 +7,51 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 const ProfessionalLink = () => {
-  const history = useHistory();
-  const handleProfessional = () => {
-    history.push("/professional");
-    window.scrollTo(0, 0);
-  }
+  // const history = useHistory();
+  // const handleProfessional = () => {
+  //   history.push("/professional");
+  //   window.scrollTo(0, 0);
+  // }
   return (
-      <Link onClick={handleProfessional} style={{color: "white", textDecoration: "none"}}>
+      <Link to="/professional" style={{color: "white", textDecoration: "none"}}>
         <span></span>
         <div id="slot1" className="content1">
+          <h1>
+            Software Engineering Career
+          </h1>
           <img id="slot1img" src={oldJustin} alt="slot1 image"/>
-          Profesionalism
         </div>
       </Link>
   )
 }
 
 const AboutLink = () => {
-  const history = useHistory();
-  const handleAbout = () => {
-    history.push("/about");
-    window.scrollTo(0, 0);
-  }
+  // const history = useHistory();
+  // const handleAbout = () => {
+  //   history.push("/about");
+  //   window.scrollTo(0, 0);
+  // }
   return (
-      <Link onClick={handleAbout} style={{color: "white", textDecoration: "none"}}>
+      <Link to="/about" style={{color: "white", textDecoration: "none"}}>
         <span></span>
         <div id="slot2" className="content2">
           <img id="slot2img" src={youngJustin} alt="slot2 image"/>
-          Personal
+          <h1>
+            Personal Story
+          </h1>
         </div>
       </Link>
   )
 }
 
 const ContactLink = () => {
-  const history = useHistory();
-  const handleContact = () => {
-    history.push("/contact");
-    window.scrollTo(0, 0);
-  }
+  // const history = useHistory();
+  // const handleContact = () => {
+  //   history.push("/contact");
+  //   window.scrollTo(0, 0);
+  // }
   return (
-      <Link onClick={handleContact} style={{color: "white", textDecoration: "none"}}>
+      <Link to="/contact" style={{color: "white", textDecoration: "none"}}>
         <span></span>
         <div id="slot3" className="content3">
           <img id="slot3img" src={samuri} alt="slot2 image"/>

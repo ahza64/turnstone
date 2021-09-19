@@ -3,7 +3,7 @@ import linkedinLogo from './Linkedin-Logo.png';
 
 const ContactMePage = () => {
 return (
-  <div className="pageGrid">
+  <div id="contactMe" className="pageGrid">
     <h2>Contact Me</h2>
     <a href="https://www.linkedin.com/in/justinmichaelpettit"><img id="slot2img" src={linkedinLogo} alt="slot2 image"/></a>
     {/*
