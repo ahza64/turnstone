@@ -43,6 +43,7 @@ const NavButtonList = () => {
     <div><ProfessionalButton/></div>
     <div><AboutButton/></div>
     <div><ContactButton/></div>
+    <div><ProjectsButton/></div>
     </>
   )
 }
@@ -88,6 +89,16 @@ const ProfessionalButton = () => {
   }
   return (
       <button type="button" onClick={handleProfessional}>Professional</button>
+  )
+}
+
+const ProjectsButton = () => {
+  const history = useHistory();
+  const handleProjects = () => {
+    history.push("/projects");
+  }
+  return (
+      <button type="button" onClick={handleProjects}>Projects</button>
   )
 }
 

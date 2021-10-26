@@ -9,6 +9,7 @@ import InterestsPage from './interestsPage';
 import ProfessionalPage from './professional/professionalPage';
 import SocialPage from './socialPage';
 import TruthPage from './truthPage';
+import ProjectsPage from './projects/projectsPage';
 
 const IndexPages = () => {
 return (
@@ -25,6 +26,9 @@ return (
       </Route>
       <Route path="/contact">
         <ContactMePage />
+      </Route>
+      <Route path="/projects">
+        <ProjectsPage />
       </Route>
       <Route path="/social">
         <SocialPage />

@@ -3,6 +3,7 @@ import samuri from './samuri.png';
 import youngJustin from '../aboutMe/youngJustin.jpg';
 import oldJustin from '../professional/oldJustin.jpg';
 import linkedinLogo from '../contactMe/Linkedin-Logo.png';
+import yellowGraph from '../projects/yellowGraph.png';
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
@@ -53,11 +54,26 @@ const ContactLink = () => {
   return (
       <Link to="/contact" style={{color: "white", textDecoration: "none"}}>
         <span></span>
-        <div id="slot3" className="content3">
-          <img id="slot3img" src={samuri} alt="slot2 image"/>
-          <img id="slot2img" src={linkedinLogo} alt="slot2 image"/>
+        <div id="slot1" className="content1">
+          <h2>  Contact me  </h2>
+          <img id="slot1img" src={samuri} alt="slot2 image"/>
         </div>
       </Link>
+  )
+}
+
+const ProjectsLink = () => {
+
+  return (
+    <Link to="/projects" style={{color: "white", textDecoration: "none"}}>
+      <span></span>
+      <div id="slot2" className="content2">
+        <img id="slot2img" src={yellowGraph} alt="slot2 image"/>
+        <h2>
+          Projects
+        </h2>
+      </div>
+    </Link>
   )
 }
 
@@ -77,9 +93,14 @@ return (
         <AboutLink />
       </div>
     </div>
-    <div className="container3">
-      <div className="box3">
+    <div className="container1">
+      <div className="box1">
         <ContactLink />
+      </div>
+    </div>
+    <div className="container2">
+      <div className="box2">
+        <ProjectsLink />
       </div>
     </div>
     {/*
