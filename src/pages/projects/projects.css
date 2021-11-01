@@ -1,3 +1,23 @@
+.wrapper  > a {
+  background: #eee;
+
+}
+
 #projects {
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.title {
+  grid-column: 1/4;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.projectTitle {
+  grid-column: 1/5;
+}
+
+.p1t1 {
+  grid-column: 1/5;
 }
