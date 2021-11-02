@@ -1,8 +1,8 @@
 import React from 'react';
-import yellowGraph from '../wows/yellowGraph.png';
-import spider from '../wows/spider.png';
-import fullDetail from '../wows/fullDetail.png';
-import removedMods from '../wows/removedMods.png';
+import yellowGraph from './wows/yellowGraph.png';
+import spider from './wows/spider.png';
+import fullDetail from './wows/fullDetail.png';
+import removedMods from './wows/removedMods.png';
 
 const ContactMePage = () => {
   return (
