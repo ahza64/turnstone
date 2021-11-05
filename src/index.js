@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom";
 import AppProvider from "./context/context";
 import StylingWrapper from './app';
+import ScrollToTop from './hooks/ScrollToTop'
 
 import './grid.css';
 import './pages/aboutMe/aboutMe.css';
@@ -19,6 +20,7 @@ const App = () => {
   return (
     <AppProvider>
       <Router>
+        <ScrollToTop />
         <StylingWrapper/>
       </Router>
     </AppProvider>
