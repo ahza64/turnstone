@@ -24,7 +24,7 @@ const ContactMePage = () => {
       <a className="projectImages reactionImg" href="https://vibrant-darwin-54679b.netlify.app/"><img className="projectImages" src={reducerCode} alt="slot2 image"/></a>
       <a className="projectImages reactionImg" href="https://vibrant-darwin-54679b.netlify.app/"><img className="projectImages" src={actionCode} alt="slot2 image"/></a>
       <div className="reactionText" >
-        This project is the most advanced React project I've built with functional hooks. It focuses on understanding the state action -> reducer management design pattern and what one would typically see in enterprise software. The app also covers the typical (if not all) available hooks, including built custom hooks. There is no server or database, but the app is triple binding, using pubsub, which means, any users currently using the app, will see any new activity that others will add. I honestly look forward to building my next project and working on teams with hooks.
+      This project is an advanced project showcasing the new hooks reducer pattern that replaces the Flux library and so much more. It focuses on understanding the state action -> reducer management design pattern and what one would typically see in larger applications. The app also covers the typical (if not all) available hooks, including building custom hooks. There is no server or database, but the app is triple binding, using pubsub, which means, any users currently using the app, will see any new activity that others will add. I honestly look forward to building my next project and working on teams with hooks.
       </div>
 
       <h3 className="projectTitle">2.) World of warships data visualisation</h3>
